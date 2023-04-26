@@ -80,9 +80,13 @@ char checkWinner() {
     char b = board[combination[1] / BOARD_SIZE][combination[1] % BOARD_SIZE];
     char c = board[combination[2] / BOARD_SIZE][combination[2] % BOARD_SIZE];
     
-    if (a == b && b == c && a != '-') {
+    if (a == b) {
+      if(b == c) {
+        if(a != '-') {
       return a;
-    }
+        }
+      }
+    } 
   }
   return '-';
 }

@@ -83,7 +83,7 @@ char checkWinner() {
     if (a == b) {
       if(b == c) {
         if(a != '-') {
-      return a;
+          return a;
         }
       }
     } 

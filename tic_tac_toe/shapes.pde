@@ -7,12 +7,12 @@ void drawBoard() {
 }
 
 void drawShapes() {
-  for (int i = 0; i < BOARD_SIZE; i++) {
-    for (int j = 0; j < BOARD_SIZE; j++) {
-      if (board[i][j] == 'X') {
-        drawX(j, i);
-      } else if (board[i][j] == 'O') {
-        drawO(j, i);
+  for (int row = 0; row < BOARD_SIZE; row++) {
+    for (int col = 0; col < BOARD_SIZE; col++) {
+      if (board[row][col] == 'X') {
+        drawX(col, row);
+      } else if (board[row][col] == 'O') {
+        drawO(col, row);
       }
     }
   }

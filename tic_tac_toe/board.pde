@@ -4,9 +4,9 @@ boolean gameEnded = false;
 void initializeBoard() {
   board = new char[BOARD_SIZE][BOARD_SIZE];
   
-  for (int i = 0; i < BOARD_SIZE; i++) {
-    for (int j = 0; j < BOARD_SIZE; j++) {
-      board[i][j] = '-';
+  for (int row = 0; row < BOARD_SIZE; row++) {
+    for (int col = 0; col < BOARD_SIZE; col++) {
+      board[row][col] = '-';
     }
   }
   computerMove();
@@ -64,9 +64,9 @@ void checkGameState() {
 }
 
 boolean isBoardFull() {
-  for (int x = 0; x < BOARD_SIZE; x++) {
-    for (int y = 0; y < BOARD_SIZE; y++) {
-      if (board[x][y] == '-') {
+  for (int row = 0; row < BOARD_SIZE; row++) {
+    for (int col = 0; col < BOARD_SIZE; col++) {
+      if (board[row][col] == '-') {
         return false;
       }
     }

@@ -1,8 +1,8 @@
 void drawBoard() {
   strokeWeight(5);
-  for (int i = 1; i < BOARD_SIZE; i++) {
-    line(i * CELL_SIZE, 0, i * CELL_SIZE, height);
-    line(0, i * CELL_SIZE, width, i * CELL_SIZE);
+  for (int length = 1; length < BOARD_SIZE; length++) {
+    line(length * CELL_SIZE, 0, length * CELL_SIZE, height);
+    line(0, length * CELL_SIZE, width, length * CELL_SIZE);
   }
 }
 

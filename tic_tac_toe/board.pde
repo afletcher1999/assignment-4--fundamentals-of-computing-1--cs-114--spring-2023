@@ -2,8 +2,7 @@ char[][] board;
 boolean gameEnded = false;
 
 void initializeBoard() {
-  board = new char[BOARD_SIZE][BOARD_SIZE];
-  
+  board = new char[BOARD_SIZE][BOARD_SIZE]; 
   for (int row = 0; row < BOARD_SIZE; row++) {
     for (int col = 0; col < BOARD_SIZE; col++) {
       board[row][col] = '-';
@@ -18,11 +17,9 @@ void handleKeyPress(char key) {
     if (cell >= 0 && cell <= 8) {
       int row = cell / BOARD_SIZE;
       int col = cell % BOARD_SIZE;
-
       if (board[row][col] == '-') {
         board[row][col] = 'O';
         checkGameState();
-
         if (!gameEnded) {
           computerMove();
           checkGameState();
@@ -40,18 +37,16 @@ void handleKeyPress(char key) {
 
 void computerMove() { //allows the computer to play, while also randomizing computer selection of cells
   int row;
-  int col;
-  
+  int col;  
   do {
     row = int(random(BOARD_SIZE));
     col = int(random(BOARD_SIZE));
-  } while (board[row][col] != '-');
+  } while (board[row][col] != '-');  
   board[row][col] = 'X';
 }
 
 void checkGameState() {
   char winner = checkWinner();
-
   if (winner == 'X' || winner == 'O') {
     gameEnded = true;
     println(winner + " has won!");
@@ -78,8 +73,7 @@ char checkWinner() {
   for (int[] combination : WINNING_COMBINATIONS) {
     char a = board[combination[0] / BOARD_SIZE][combination[0] % BOARD_SIZE];
     char b = board[combination[1] / BOARD_SIZE][combination[1] % BOARD_SIZE];
-    char c = board[combination[2] / BOARD_SIZE][combination[2] % BOARD_SIZE];
-    
+    char c = board[combination[2] / BOARD_SIZE][combination[2] % BOARD_SIZE];    
     if (a == b) {
       if(b == c) {
         if(a != '-') {
